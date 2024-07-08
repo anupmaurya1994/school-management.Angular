@@ -14,7 +14,7 @@ This project is a school management system created using Angular V18. It provide
 ## Pre-requisites
 
 - [Visual Studio Code](https://code.visualstudio.com/)
-- [Node.js v20.10.0](https://nodejs.org/) (which includes npm)
+- [Node.js](https://nodejs.org/) v20.10.0 (which includes npm)
 
 ## Getting Started
 
