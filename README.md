@@ -32,7 +32,7 @@ You can learn more in the [Angular documentation](https://angular.io/docs).
 ## Screenshots
 
 ![Login](path/to/login/screenshot.png)
-![Dashboard](path/to/dashboard/screenshot.png)
+![Dashboard]([path/to/dashboard/screenshot.png](https://github.com/anupmaurya1994/school-management.Angular/blob/main/src/assets/imgs/dashboard-1.png))
 ![Attendance](path/to/attendance/screenshot.png)
 ![Student Management](path/to/student-management/screenshot.png)
 
