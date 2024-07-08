@@ -33,7 +33,7 @@ You can learn more in the [Angular documentation](https://angular.io/docs).
 
 ![Login](path/to/login/screenshot.png)
 ![Dashboard]
-<img src="[https://github.com/differenz-system/Addressbook.ReactJS/blob/master/public/screenshots/login.PNG](https://github.com/anupmaurya1994/school-management.Angular/blob/main/src/assets/imgs/dashboard-1.png)" width="280">
+<img src="https://github.com/anupmaurya1994/school-management.Angular/blob/main/src/assets/imgs/dashboard-1.png" width="280">
 ![Attendance](path/to/attendance/screenshot.png)
 
 <img src="https://github.com/differenz-system/Addressbook.ReactJS/blob/master/public/screenshots/login.PNG" width="280">
