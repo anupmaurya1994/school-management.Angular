@@ -31,13 +31,11 @@ You can learn more in the [Angular documentation](https://angular.io/docs).
 
 ## Screenshots
 
-![Login](path/to/login/screenshot.png)
+![Login](<img src="https://github.com/anupmaurya1994/school-management.Angular/blob/main/src/assets/imgs/dashboard-1.png" width="280">)
 ![Dashboard]
 <img src="https://github.com/anupmaurya1994/school-management.Angular/blob/main/src/assets/imgs/dashboard-1.png" width="280">
 ![Attendance](path/to/attendance/screenshot.png)
 
-<img src="https://github.com/differenz-system/Addressbook.ReactJS/blob/master/public/screenshots/login.PNG" width="280">
-![Student Management](path/to/student-management/screenshot.png)
 
 ## Support
 
