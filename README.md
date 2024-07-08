@@ -43,6 +43,6 @@ You can learn more in the [Angular documentation](https://angular.io/docs).
 
 ## Support
 
-If you've found an error in this sample, please [report an issue](link/to/issue/repository). You can also send your feedback and suggestions to [your-email@example.com].
+If you've found an error in this sample, please [report an issue](link/to/issue/repository). You can also send your feedback and suggestions to [constantsysemployee@gmail.com].
 
 Happy coding!
