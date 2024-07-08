@@ -1,6 +1,6 @@
 # School Management System
 
-This project is a school management system created using Angular. It provides various features to manage different aspects of a school, including login/signup, role-based access, online attendance, and student management.
+This project is a school management system created using Angular V18. It provides various features to manage different aspects of a school, including students online attendance.
 
 ## Features
 
@@ -10,12 +10,11 @@ This project is a school management system created using Angular. It provides va
    - **Teacher:** Has restricted access to certain features.
    - **Student:** Has limited access to features.
 3. **Online Attendance Register:** Teachers can mark attendance for students online.
-4. **Student Management:** Manage different aspects of student information and activities.
 
 ## Pre-requisites
 
 - [Visual Studio Code](https://code.visualstudio.com/)
-- [Node.js](https://nodejs.org/) (which includes npm)
+- [Node.js](https://nodejs.org/) v20.10.0 (which includes npm)
 
 ## Getting Started
 
