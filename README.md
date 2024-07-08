@@ -31,10 +31,14 @@ You can learn more in the [Angular documentation](https://angular.io/docs).
 
 ## Screenshots
 
-<img src="https://github.com/anupmaurya1994/school-management.Angular/blob/main/src/assets/imgs/login.png" width="280">
-<img src="https://github.com/anupmaurya1994/school-management.Angular/blob/main/src/assets/imgs/signup.png" width="280">
-
+<img src="https://github.com/anupmaurya1994/school-management.Angular/blob/main/src/assets/imgs/login.png" width="280"> <img src="https://github.com/anupmaurya1994/school-management.Angular/blob/main/src/assets/imgs/signup.png" width="280">
 <img src="https://github.com/anupmaurya1994/school-management.Angular/blob/main/src/assets/imgs/dashboard.png" width="280">
+<img src="https://github.com/anupmaurya1994/school-management.Angular/blob/main/src/assets/imgs/dashboard-1.png" width="280">
+<img src="https://github.com/anupmaurya1994/school-management.Angular/blob/main/src/assets/imgs/profile-1.png" width="280">
+<img src="https://github.com/anupmaurya1994/school-management.Angular/blob/main/src/assets/imgs/profile-2.png" width="280">
+<img src="https://github.com/anupmaurya1994/school-management.Angular/blob/main/src/assets/imgs/profile-3.png" width="280">
+<img src="https://github.com/anupmaurya1994/school-management.Angular/blob/main/src/assets/imgs/profile-4.png" width="280">
+
 
 
 ## Support
