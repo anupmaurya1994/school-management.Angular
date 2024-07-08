@@ -1,0 +1,322 @@
+<div class="main-body-header border-bottom border-dark-subtle">
+    <div ngbDropdown
+        class="d-flex justify-content-between align-items-center px-3 px-md-4 py-1 py-md-3 flex-column flex-md-row">
+        <h5 class="m-0 fw-bold cursor" routerLink="/admin/dashboard">
+            Fantastic School Admin
+        </h5>
+        <a routerLink="#" class="nav-link d-flex align-items-center" ngbDropdownToggle id="dropdown">
+            <i class="bi bi-person fs-4"></i>
+            <span class="p-2 pe-1 fw-semibold">admin</span>
+            <!-- <i class="bi bi-caret-down-fill fs-7"></i> -->
+        </a>
+        <div ngbDropdownMenu aria-labelledby="dropdown" class="dropdown-card">
+            <div ngbDropdownItem class="profile-img w-auto text-center">
+                <img src="https://i.pravatar.cc/600" alt="" class="img-fluid rounded-circle w-50 h-50">
+                <p class="fs-7 lh-sm m-0 fw-normal text-secondary">Richard Roi <br>
+                    Super admin
+                </p>
+            </div>
+
+            <div class="dropdown-divider"></div>
+            <button ngbDropdownItem class="fs-7 fw-semibold ps-4" routerLink="/profile">My account</button>
+            <button ngbDropdownItem class="fs-7 fw-semibold ps-4">Request tenant</button>
+            <div class="dropdown-divider"></div>
+            <button ngbDropdownItem class="fs-7 fw-semibold ps-4" routerLink="/">
+                <i class="bi bi-power pe-1 text-danger"></i>Logout
+            </button>
+        </div>
+    </div>
+</div>
+
+<h2 class="pt-2 ps-4 pb-2 m-0">Profile</h2>
+
+<div class="container-fluid">
+    <div class="row px-1 px-md-3">
+        <div class="col-md-3 pb-4 pb-md-0">
+            <div class="py-4 shadow profile-img text-center rounded-2">
+                <img src="https://i.pravatar.cc/600" alt="" class="img-fluid rounded-circle w-25 h-25 border border-2">
+                <p class="fs-7 lh-md pt-2 fw-semibold">Richard Roi<br>
+                    <span class="text-secondary">admin&#64;gmail.com </span><br>
+                    <span class="text-secondary">+917464664743 </span>
+                </p>
+            </div>
+        </div>
+        <div class="col-md-9">
+            <div class="py-2 py-md-4 px-1 px-md-3 shadow profile-img rounded-2">
+                <nav class="navbar p-0 navbar-expand">
+                    <div class="container-fluid">
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav gap-0 gap-md-3">
+                                <li class="nav-item" (click)="showSection('overview')">
+                                    <a class="nav-link fs-7 fw-semibold cursor text-black">Overview</a>
+                                </li>
+                                <li class="nav-item" (click)="showSection('editprofile')">
+                                    <a class="nav-link fs-7 fw-semibold cursor text-black">Edit Profile</a>
+                                </li>
+                                <li class="nav-item" (click)="showSection('settings')">
+                                    <a class="nav-link fs-7 fw-semibold cursor text-black">Settings</a>
+                                </li>
+                                <li class="nav-item" (click)="showSection('changepass')">
+                                    <a class="nav-link fs-7 fw-semibold cursor text-black">Change Password</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                <hr class="my-0 mx-2 text-secondary-emphasis">
+
+                <!-- overview -->
+
+                <div class="overview p-2 p-sm-3" *ngIf="currentSection === 'overview'">
+                    <h5 class="ps-1 py-sm-3 text-primary-emphasis">Profile Deatails</h5>
+                    <form class="ps-1 fs-14px fw-medium">
+                        <div class="mb-sm-2 row">
+                            <label class="col-sm-2 col-form-label text-primary">User Id</label>
+                            <div class="col-sm-10">
+                                <input type="text" readonly class="form-control-plaintext fw-medium"
+                                    value="49r6sd9879gd7sf8">
+                            </div>
+                        </div>
+                        <div class="mb-sm-2 row">
+                            <label class="col-sm-2 col-form-label text-primary">Name</label>
+                            <div class="col-sm-10">
+                                <input type="text" readonly class="form-control-plaintext fw-medium"
+                                    value="Richard Roi">
+                            </div>
+                        </div>
+                        <div class="mb-sm-2 row">
+                            <label class="col-sm-2 col-form-label text-primary">Name Space</label>
+                            <div class="col-sm-10">
+                                <input type="text" readonly class="form-control-plaintext fw-medium" value="Richard007">
+                            </div>
+                        </div>
+                        <div class="mb-sm-2 row">
+                            <label class="col-sm-2 col-form-label text-primary">Role</label>
+                            <div class="col-sm-10">
+                                <input type="text" readonly class="form-control-plaintext fw-medium"
+                                    value="Tenant admin">
+                            </div>
+                        </div>
+                        <div class="mb-sm-2 row">
+                            <label class="col-sm-2 col-form-label text-primary">Address</label>
+                            <div class="col-sm-10">
+                                <input type="text" readonly class="form-control-plaintext fw-medium" value="123">
+                            </div>
+                        </div>
+                        <div class="mb-sm-2 row">
+                            <label class="col-sm-2 col-form-label text-primary">Email</label>
+                            <div class="col-sm-10">
+                                <input type="text" readonly class="form-control-plaintext fw-medium"
+                                    value="email@example.com">
+                            </div>
+                        </div>
+                        <div class="mb-sm-2 row">
+                            <label class="col-sm-2 col-form-label text-primary">Mobile</label>
+                            <div class="col-sm-10">
+                                <input type="text" readonly class="form-control-plaintext fw-medium" value="9985556586">
+                            </div>
+                        </div>
+                        <div class="mb-sm-2 row">
+                            <label class="col-sm-2 col-form-label text-primary">Gender</label>
+                            <div class="col-sm-10">
+                                <input type="text" readonly class="form-control-plaintext fw-medium" value="Male">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Edit profile -->
+
+                <div class="editprofile p-3" *ngIf="currentSection === 'editprofile'">
+                    <form class="ps-2 fs-14px fw-medium">
+                        <div class="mb-2 row align-items-center">
+                            <label class="col-sm-3 col-form-label text-primary">Profile image</label>
+                            <div class="col-sm-9 pe-4">
+                                <div class="w-75 h-75">
+                                    <img src="https://i.pravatar.cc/600" alt=""
+                                        class="img-fluid rounded-circle border border-2 h-25 w-25">
+                                    <input id="fileInput" type="file" class="d-none" accept="image/*">
+                                    <button type="button" class="btn btn-sm btn-success fw-semibold rounded-1 ms-2 fs-7"
+                                        onclick="document.getElementById('fileInput').click();">
+                                        Choose Photo
+                                    </button>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-2 row">
+                            <label class="col-sm-3 col-form-label text-primary">User id</label>
+                            <div class="col-sm-9 pe-4">
+                                <input type="text" class="form-control fw-medium bg-secondary bg-opacity-25 fs-14px"
+                                    value="49r6sd9879gd7sf8" disabled>
+                            </div>
+                        </div>
+                        <div class="mb-2 row">
+                            <label class="col-sm-3 col-form-label text-primary">Name</label>
+                            <div class="col-sm-9 pe-4">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <input type="text" class="form-control fw-medium fs-14px" value="Richard">
+                                    </div>
+                                    <div class="col-6">
+                                        <input type="text" class="form-control fw-medium fs-14px" value="Roi">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-2 row">
+                            <label class="col-sm-3 col-form-label text-primary">Name space</label>
+                            <div class="col-sm-9 pe-4">
+                                <input type="text" class="form-control fw-medium fs-14px" value="Richard007">
+                            </div>
+                        </div>
+                        <div class="mb-2 row">
+                            <label class="col-sm-3 col-form-label text-primary">Address</label>
+                            <div class="col-sm-9 pe-4">
+                                <input type="text" class="form-control fw-medium fs-14px" value="123">
+                            </div>
+                        </div>
+                        <div class="mb-2 row">
+                            <label class="col-sm-3 col-form-label text-primary">Mobile</label>
+                            <div class="col-sm-9 pe-4">
+                                <input type="tel" class="form-control fw-medium fs-14px" value="9985556586">
+                            </div>
+                        </div>
+                        <div class="mb-2 row">
+                            <label class="col-sm-3 col-form-label text-primary">Gender</label>
+                            <div class="col-sm-9 pe-4">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input border-secondary" type="radio"
+                                        name="inlineRadioOptions">
+                                    <label class="form-check-label">Male</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input border-secondary" type="radio"
+                                        name="inlineRadioOptions">
+                                    <label class="form-check-label">Female</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-success fs-14px rounded-1 fw-semibold">Save
+                                Changes</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- settings -->
+
+                <div class="settings p-3 " *ngIf="currentSection === 'settings'">
+                    <div class="d-lg-flex gap-5 align-items-center">
+                        <h5 class="ps-1 py-2 text-primary-emphasis me-5">Enable notification</h5>
+                        <div class="ms-lg-5 fw-medium mb-2 x">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label  ps-1 pe-3">
+                                Email
+                            </label>
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label  ps-1 pe-3">
+                                Mobile
+                            </label>
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label  ps-1 pe-3">
+                                Whatsapp
+                            </label>
+                        </div>
+                    </div>
+                    <div class="text-center mt-4">
+                        <button type="submit" class="btn btn-success fs-14px rounded-1 fw-semibold">Save
+                            Changes</button>
+                    </div>
+                </div>
+
+                <!-- change password -->
+
+                <div class="changepass" *ngIf="currentSection === 'changepass'">
+                    <form [formGroup]="changepass" class="p-3">
+                        <div class="mb-3 row">
+                            <label class="col-sm-4 col-form-label fs-7 fw-medium">Old Password</label>
+                            <div class="col-sm-7">
+                                <div class="input-group">
+                                    <input type="password" class="form-control fs-7" placeholder="Old password"
+                                        name="pass" id="pass1" formControlName="oldPass">
+
+                                    <button class="btn border border-1" type="button" id="password-addon"
+                                        (click)="showPas('pass1','1')">
+                                        <i [class]='passIcon' id="1"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <label class="col-sm-4 col-form-label fs-7 fw-medium">New Password</label>
+                            <div class="col-sm-7">
+                                <div class="input-group">
+                                    <input type="password" class="form-control fs-7" placeholder="New password"
+                                        name="pass" id="pass2" formControlName="newPass">
+
+                                    <button class="btn border border-1" type="button" id="password-addon"
+                                        (click)="showPas('pass2','2')">
+                                        <i [class]='passIcon' id="2"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <label class="col-sm-4 col-form-label fs-7 fw-medium">Confirm Password</label>
+                            <div class="col-sm-7">
+                                <div class="input-group">
+                                    <input type="password" class="form-control fs-7" placeholder="Confirm password"
+                                        name="pass" id="pass3" formControlName="confPass">
+
+                                    <button class="btn border border-1" type="button" id="password-addon"
+                                        (click)="showPas('pass3','3')">
+                                        <i [class]='passIcon' id="3"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+                    <div class="p-3">
+                        <h2 class="fs-7">Your password must have</h2>
+                        <div class="form-check m-0 fw-medium text-success align-items-center d-flex">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label fs-7 ps-2">
+                                At Least 1 Alphanumeric charaters (a..z,A..Z).
+                            </label>
+                        </div>
+                        <div class="form-check m-0 fw-medium text-success align-items-center d-flex">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label fs-7 ps-2">
+                                Mixed of uppercase and lowercase.
+                            </label>
+                        </div>
+                        <div class="form-check m-0 fw-medium text-success align-items-center d-flex">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label fs-7 ps-2">
+                                At least 1 number (0,9).
+                            </label>
+                        </div>
+                        <div class="form-check m-0 fw-medium text-success align-items-center d-flex">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label fs-7 ps-2">
+                                At leat 6 minimum password length.
+                            </label>
+                        </div>
+
+                        <h2 class="fs-7 pt-4">Strength:Medium</h2>
+                        <div class="progress w-25" style="height: 12px">
+                            <div class="progress-bar"></div>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-success fs-7 fw-semibold mb-2 rounded-1"> Save
+                            Changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

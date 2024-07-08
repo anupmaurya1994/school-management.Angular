@@ -1,0 +1,149 @@
+<div class="account-pages my-5 pt-sm-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6 col-xl-5">
+                <div class="card overflow-hidden rounded-1 border-0">
+                    <div class="bg-primary bg-soft">
+                        <div class="row">
+                            <div class="col-7">
+                                <div class="p-4 text-purple">
+                                    <h5 class="fs-6">Welcome Back !</h5>
+                                    <p class="fs-7 fw-medium">Sign in to continue to Skote.</p>
+                                </div>
+                            </div>
+                            <div class="col-5 align-self-end">
+                                <img src="assets/imgs/profile-img.png" alt="" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body pt-0">
+                        <!-- <div class="auth-logo">
+                            <a href="index.html" class="auth-logo-light">
+                                <div class="avatar-md profile-user-wid mb-4">
+                                    <span class="avatar-title rounded-circle bg-light">
+                                        <img src="assets/imgs/logo.svg" alt="" class="rounded-circle" height="34">
+                                    </span>
+                                </div>
+                            </a>
+
+                            <a href="index.html" class="auth-logo-dark">
+                                <div class="avatar-md profile-user-wid mb-4">
+                                    <span class="avatar-title rounded-circle bg-light">
+                                        <img src="assets/imgs/logo.svg" alt="" class="rounded-circle" height="34">
+                                    </span>
+                                </div>
+                            </a>
+                        </div> -->
+                        <div class="p-2 pt-3">
+                            <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+
+                                <div class="mb-3">
+                                    <label for="username" class="form-label fs-7 fw-medium">Username</label>
+                                    <input type="text" class="form-control fs-7" id="username"
+                                        placeholder="Enter username" name="username" formControlName="username">
+
+                                    <div *ngIf="logData.username && logData.username.invalid && logData.username.touched"
+                                        class="text-danger">
+                                        Wrong Username.
+                                    </div>
+
+                                </div>
+
+                                <div class="mb-3">
+                                    <label class="form-label fs-7 fw-medium">Password</label>
+                                    <div class="input-group auth-pass-inputgroup">
+                                        <input type="password"
+                                            [class]="logData.pass  && logData.pass.touched && logData.pass.invalid ? 'invalid-input form-control' : 'form-control fs-7' "
+                                            id="pass" placeholder="Enter password" name="pass" formControlName="pass">
+
+                                        <button class="btn btn-light border border-1" (click)="showPas()" type="button"
+                                            id="password-addon">
+                                            <i [class]='passIcon'></i>
+                                        </button>
+                                    </div>
+                                    <div *ngIf="logData.pass && logData.pass.invalid && logData.pass.touched"
+                                        class="text-danger">
+                                        Wrong Password.
+                                    </div>
+                                </div>
+
+                                <!-- <div class="mb-3">
+                                    <label for="role" class="form-label fs-7 fw-medium">Role</label>
+                                    <select name="role" id="role" formControlName="role" class="form-control fs-7">
+                                        <option value="" disabled hidden selected>Select an option</option>
+                                        <option value="Admin">Admin</option>
+                                        <option value="teachers">Teachers</option>
+                                    </select>
+
+                                    <div *ngIf="logData.role && logData.role.invalid && logData.role.touched"
+                                        class="text-danger">
+                                        Please Select an option.
+                                    </div>
+                                </div> -->
+
+                                <div class="form-check fs-7 fw-medium">
+                                    <input class="form-check-input focus-ring focus-ring-secondary text-purple"
+                                        type="checkbox" value="" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                        Remember me
+                                    </label>
+                                </div>
+
+                                <div class="mt-3 d-grid">
+                                    <button class="btn bg-purple text-white fs-7 rounded-1 fw-medium login"
+                                        type="submit">
+                                        Log In</button>
+                                </div>
+
+                                <div class="mt-4 text-center">
+                                    <!-- <h5 class="fs-6 mb-3">Sign in with</h5> -->
+
+                                    <!-- <ul class="list-inline">
+                                        <li class="list-inline-item">
+                                            <a href="javascript::void()"
+                                                class="social-list-item bg-primary text-white border-primary">
+                                                <i class="mdi mdi-facebook"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a href="javascript::void()"
+                                                class="social-list-item bg-info text-white border-info">
+                                                <i class="mdi mdi-twitter"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a href="javascript::void()"
+                                                class="social-list-item bg-danger text-white border-danger">
+                                                <i class="mdi mdi-google"></i>
+                                            </a>
+                                        </li>
+                                    </ul> -->
+                                </div>
+
+                                <div class="mt-4 text-center">
+                                    <a href="" class="text-muted nav-link fs-7 fw-medium">
+                                        <i class="bi bi-lock-fill"></i>
+                                        Forgot your password?
+                                    </a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-5 text-center fw-medium">
+
+                    <div class="fs-7">
+                        <p class="">Don't have an account ? <a href="" class="nav-link d-inline text-primary"
+                                routerLink="/signup">
+                                Signup
+                                now </a> </p>
+                        <p class="text-secondary">©Skote. Crafted with
+                            <i class="bi bi-heart-fill text-danger"></i> by Themesbrand
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

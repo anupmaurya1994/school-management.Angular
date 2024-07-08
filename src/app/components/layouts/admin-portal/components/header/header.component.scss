@@ -1,0 +1,35 @@
+.dropdown-card {
+    width: min-content;
+    height: max-content;
+}
+
+.fs-7 {
+    font-size: 13px;
+}
+
+.cursor {
+    cursor: pointer;
+}
+
+main {
+    margin: 0px 0px 0px 248px;
+
+}
+
+.aside {
+    width: 248px;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    background-color: hsl(60deg 3.13% 12.55%);
+}
+
+@media screen and (max-width: 540px) {
+    .aside {
+        width: 216px;
+    }
+
+    main {
+        margin: 0px 0px 0px 216px;
+    }
+}

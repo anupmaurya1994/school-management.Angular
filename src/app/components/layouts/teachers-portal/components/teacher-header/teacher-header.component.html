@@ -1,0 +1,93 @@
+<!-- aside -->
+
+<aside class="aside">
+    <div class="heading pt-3 pt-sm-4 px-2 px-sm-3">
+        <h5 class="border-bottom border-dark-subtle text-white pb-4 px-3 m-0">
+            FANTASTICSCHOOL
+        </h5>
+    </div>
+
+    <div class="list text-white p-3 p-sm-4">
+        <ul class="navbar-nav justify-content-center">
+            <li class="nav-item" routerLinkActive="active" routerLink="/teachers/dashboard">
+                <a class="nav-sec nav-link d-flex align-items-center cursor">
+                    <i class="bi bi-speedometer2 fs-4"></i>
+                    <span class="fs-7 fw-semibold ps-3">DASHBOARD</span>
+                </a>
+            </li>
+
+            <li class="nav-item" routerLinkActive="active" routerLink="/teachers/students">
+                <a class="nav-sec nav-link d-flex align-items-center cursor">
+                    <i class="bi bi-person fs-4"></i>
+                    <span class="fs-7 fw-semibold ps-3">STUDENTS</span>
+                </a>
+            </li>
+
+            <li class="nav-item" routerLinkActive="active" routerLink="/teachers/classes">
+                <a class="nav-sec nav-link d-flex align-items-center cursor">
+                    <i class="bi bi-journals fs-4"></i>
+                    <span class="fs-7 fw-semibold ps-3">ATTENDANCE</span>
+                </a>
+            </li>
+
+            <li class="nav-item" routerLinkActive="active" routerLink="/teachers/sessions">
+                <a class="nav-sec nav-link d-flex align-items-center cursor">
+                    <i class="bi bi-key fs-4"></i>
+                    <span class="fs-7 fw-semibold ps-3">SESSIONS</span>
+                </a>
+            </li>
+
+            <li class="nav-item" routerLinkActive="active" routerLink="/teachers/notices">
+                <a class="nav-sec nav-link d-flex align-items-center cursor">
+                    <i class="bi bi-megaphone fs-4"></i>
+                    <span class="fs-7 fw-semibold ps-3">NOTICES</span>
+                </a>
+            </li>
+
+            <li class="nav-item" routerLinkActive="active" routerLink="/teachers/reports">
+                <a class="nav-sec nav-link d-flex align-items-center cursor">
+                    <i class="bi bi-file-text fs-4"></i>
+                    <span class="fs-7 fw-semibold ps-3">REPORTS</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</aside>
+<main>
+    <div class="container">
+        <div class="main-body-header row border-bottom border-dark-subtle">
+            <div ngbDropdown
+                class="d-flex justify-content-between align-items-center px-3 px-md-4 py-1 py-md-3 flex-column flex-md-row">
+                <h5 class="m-0 fw-bold cursor" routerLink="/teachers/dashboard">
+                    Fantastic School Admin
+                </h5>
+                <div class="d-flex align-items-center">
+                    <span class="fw-semibold me-3" id="time">{{time}}</span>
+
+                    <a class=" nav-link d-flex align-items-center cursor" ngbDropdownToggle id="dropdown">
+                        <i class="bi bi-person fs-4"></i>
+                        <span class="p-2 pe-1 fw-semibold">Profile</span>
+                        <!-- <i class="bi bi-caret-down-fill fs-7"></i> -->
+                    </a>
+                </div>
+                <div ngbDropdownMenu aria-labelledby="dropdown" class="dropdown-card">
+                    <div ngbDropdownItem class="profile-img w-auto text-center">
+                        <img src="https://i.pravatar.cc/600" alt="" class="img-fluid rounded-circle w-50 h-50">
+                        <p class="fs-7 lh-sm m-0 fw-normal text-secondary">Richard Roi <br>
+                            {{this.logInUser.role}}
+                        </p>
+                    </div>
+
+                    <div class="dropdown-divider"></div>
+                    <button ngbDropdownItem class="fs-7 fw-semibold ps-4" routerLink="/teachers/profile">My
+                        account</button>
+                    <!-- <button ngbDropdownItem class="fs-7 fw-semibold ps-4">Request tenant</button> -->
+                    <div class="dropdown-divider"></div>
+                    <button ngbDropdownItem class="fs-7 fw-semibold ps-4" (click)="logOut()">
+                        <i class="bi bi-power pe-1 text-danger"></i>Logout
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

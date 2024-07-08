@@ -1,0 +1,146 @@
+<main>
+  <div class="container">
+    <div class="main-body-contain px-lg-4 py-3">
+      <h4 class="text-black pb-3">
+        <span class="">Attendance</span>
+        <div class="row float-end">
+          <div class="form-group">
+            <input type="text" class="form-control border border-dark-subtle" placeholder="Select Date"
+              [bsConfig]="{ dateInputFormat: 'DD/MM/YYYY' }" bsDatepicker [bsConfig]="{ adaptivePosition: true }"
+              [(ngModel)]="bsValue">
+          </div>
+        </div>
+        <!-- </span> -->
+      </h4>
+      <div class="table-responsive">
+        <table class="table table-bordered fs-7 text-center">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>NAME</th>
+              <th>PRESENT</th>
+              <th>ABSENT</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let u of filteredStd; index as i">
+              <th>{{ i + 1 }}</th>
+              <td class="fs-6 fw-semibold text-capitalize">{{ u[0] }}</td>
+              <td>
+                <input class="form-check-input fs-5 border-dark-subtle" type="checkbox" (click)="fillAdsent(u, i, 'P')"
+                  [checked]="u[5] == 'P' ? true : false" />
+              </td>
+              <td>
+                <input class="form-check-input fs-5 border-dark-subtle" type="checkbox" (click)="fillAdsent(u, i, 'A')"
+                  [checked]="u[5] == 'A' ? true : false" />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="fw-medium">
+          <span>Total number of student is :- {{ stuAttendance.length }}</span>
+          <button class="btn btn-success float-end fs-7 fw-medium rounded-1" (click)="onSubmit()">
+            Submit
+          </button>
+        </div>
+      </div>
+
+      <!-- model -->
+      <ng-template #content let-c="close" let-d="dismiss">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modal-basic-title">Add Class</h5>
+          <button type="button" class="btn-close" aria-label="Close" (click)="d('Cross click')"></button>
+        </div>
+        <div class="modal-body">
+          <!-- <form class="text-start fs-7" [formGroup]="classes" (ngSubmit)="onSubmit()"> -->
+
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Class Id*</label>
+            <input type="text" class="form-control mb-3 fs-7" id="clsId" name="clsId" placeholder="Enter Class Id"
+              formControlName="clsId" />
+            <!-- <div *ngIf="stfData.clsId && stfData.clsId.invalid && stfData.clsId.touched"
+                                class="text-danger">
+                                Please Enter your class Id.
+                            </div> -->
+          </div>
+
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Class name*</label>
+            <input type="text" class="form-control mb-3 fs-7" id="clsName" name="clsName" placeholder="Enter Class Name"
+              formControlName="clsName" />
+            <!-- <div *ngIf="stfData.clsName && stfData.clsName.invalid && stfData.clsName.touched"
+                                class="text-danger">
+                                Please Enter a last name.
+                            </div> -->
+          </div>
+          <button type="submit" class="btn btn-outline-success float-end">
+            Submit
+          </button>
+          <!-- </form> -->
+        </div>
+      </ng-template>
+
+      <!-- Edit model -->
+
+      <ng-template #content1 let-c="close" let-d="dismiss">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modal-basic-title">Update Class</h5>
+          <button type="button" class="btn-close" aria-label="Close" (click)="d('Cross click')"></button>
+        </div>
+        <div class="modal-body">
+          <!-- <form class="text-start fs-7" [formGroup]="clsEdit" (ngSubmit)="onSave()"> -->
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Class Id*</label>
+            <input type="text" class="form-control mb-3 fs-7" id="clsId" name="clsId" placeholder="Enter Class Id"
+              formControlName="clsId" />
+            <!-- <div *ngIf="stfData.clsId && stfData.clsId.invalid && stfData.clsId.touched"
+                                class="text-danger">
+                                Please Enter your class Id.
+                            </div> -->
+          </div>
+
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Class name*</label>
+            <input type="text" class="form-control mb-3 fs-7" id="clsName" name="clsName" placeholder="Enter Class Name"
+              formControlName="clsName" />
+            <!-- <div *ngIf="stfData.clsName && stfData.clsName.invalid && stfData.clsName.touched"
+                                class="text-danger">
+                                Please Enter a last name.
+                            </div> -->
+          </div>
+          <button type="submit" class="btn btn-outline-success float-end">
+            Save
+          </button>
+          <!-- </form> -->
+        </div>
+      </ng-template>
+
+      <!-- Delete model -->
+
+      <ng-template #content2 class="" let-c="close" let-d="dismiss">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modal-basic-title">Profile deletion</h5>
+          <button type="button" class="btn-close" aria-label="Close" (click)="d('Cross click')"></button>
+        </div>
+        <div class="modal-body text-center">
+          <i class="bi bi-exclamation-octagon-fill text-danger display-3"></i>
+          <p class="mt-2">
+            <strong>Are you sure you want to delete profile?<br />
+              If yes than please type "Delete".</strong>
+          </p>
+          <!-- <div class="mb-3">
+                        <input type="text" class="form-control mb-3 fs-7" id="delete" name="delete" placeholder="Delete"
+                            [(ngModel)]="confDelete">
+                    </div> -->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-secondary rounded-1" (click)="d('cancel click')">
+            Cancel
+          </button>
+          <!-- <button type="button" class="btn btn-danger rounded-1" (click)="onOk()">Ok</button> -->
+        </div>
+      </ng-template>
+    </div>
+  </div>
+</main>

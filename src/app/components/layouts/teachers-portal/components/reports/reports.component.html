@@ -1,0 +1,56 @@
+<main>
+    <div class="container">
+        <!-- Main body -->
+        <div class="main-body-contain px-lg-4 py-3">
+            <div class="px-1">
+                <h4 class="text-black pb-3">
+                    <span class="">Attendance Report</span>
+
+                    <button type="button" class="btn btn-sm btn-success fw-semibold rounded-1 fs-7 float-end ms-3"
+                        (click)="downloadPdf()">
+                        PDF
+                    </button>
+
+                    <div class="row float-end ms-2">
+                        <div class="form-group">
+                            <input type="text" class="form-control py-1 border border-dark-subtle"
+                                [bsConfig]="{ dateInputFormat: 'DD/MM/YYYY' }" bsDatepicker
+                                [bsConfig]="{ adaptivePosition: true }" [(ngModel)]="bsValue"
+                                (ngModelChange)="onSelectDate()" placeholder="Select date">
+                        </div>
+                    </div>
+                    <div class="float-end" style="width: 20%;">
+                        <ng-multiselect-dropdown class="fs-7 rounded-1 fw-medium" name="std" id="std"
+                            [placeholder]="'Select Std'" [settings]="dropdownSettings" [data]="dropdownList"
+                            [(ngModel)]="selectedItems" (onSelect)="onItemSelect($event)">
+                        </ng-multiselect-dropdown>
+                    </div>
+                </h4>
+                <div class="table-responsive">
+                    <table class="table table-bordered fs-7 text-center">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>NAME</th>
+                                <th>PRESENT</th>
+                                <th>ABSENT</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let u of stuArr; index as i">
+                                <th>{{ i + 1 }}</th>
+                                <td class="fs-6 fw-semibold text-capitalize">{{ u.student_name }}</td>
+                                <td class="fs-6 fw-bold text-success">{{ u.present == true ? "P" :"-" }} </td>
+                                <td class="fs-6 fw-bold text-danger">{{ u.absent == true ? "A" : "-"}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <!-- <div class="fw-medium">
+                        <span>Total number of student is :- {{ attendanceReport.length }}</span>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

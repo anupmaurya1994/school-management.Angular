@@ -1,0 +1,253 @@
+<main>
+    <div class="container">
+        <div class="main-body-contain px-lg-4 py-3">
+            <h4 class="text-black pb-3">
+                <span class="">Staff</span>
+                <button class="btn btn-success fs-7 rounded-1 fw-medium float-end" type="button"
+                    (click)="open(content)">Add staff</button>
+            </h4>
+
+
+            <div class="table-responsive">
+                <table class="table table-striped table-bordered fs-7 text-center table-responsive">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>FIRST NAME</th>
+                            <th>LAST NAME</th>
+                            <th>PHONE</th>
+                            <th>EMAIL</th>
+                            <th>ROLE</th>
+                            <th>STATUS</th>
+                            <th>ACTIONS</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let u of newStaff;index as i">
+                            <th>{{ i + 1 }}</th>
+                            <td>{{u.fstName}}</td>
+                            <td>{{u.lstName}}</td>
+                            <td>{{u.phNum}}</td>
+                            <td>{{u.email}}</td>
+                            <td>{{u.role}}</td>
+                            <td ngbDropdown>
+                                <button type="button" class="btn btn-success btn-sm" ngbDropdownToggle id="dropdown">
+                                    <span class="fw-semibold">{{u.status}}</span>
+                                </button>
+                                <div ngbDropdownMenu aria-labelledby="dropdown" class="dropdown-card">
+                                    <button ngbDropdownItem class="fs-7 fw-semibold ps-4"
+                                        (click)="showStatus(u,'active',i)">
+                                        active
+                                    </button>
+                                    <button ngbDropdownItem class="fs-7 fw-semibold ps-4"
+                                        (click)="showStatus(u,'inactive',i)">
+                                        inactive
+                                    </button>
+                                </div>
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-secondary mx-3 btn-sm mb-2 mb-lg-0"
+                                    (click)="onEdit(content1, u,i)">Edit</button>
+                                <button type="button" class="btn btn-danger btn-sm"
+                                    (click)="onDelete(content2,i)">Delete</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+
+            <!-- model -->
+
+            <ng-template #content let-c="close" let-d="dismiss">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modal-basic-title">Add Staff</h5>
+                    <button type="button" class="btn-close" aria-label="Close" (click)="d('Cross click')"></button>
+                </div>
+                <div class="modal-body">
+                    <form class="text-start fs-7" [formGroup]="staffData" (ngSubmit)="onSubmit()">
+
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">First name*</label>
+                            <input type="text" class="form-control mb-3 fs-7" id="fstName" name="fstName"
+                                placeholder="Enter First Name" formControlName="fstName">
+                            <div *ngIf="stfData.fstName && stfData.fstName.invalid && stfData.fstName.touched"
+                                class="text-danger">
+                                Please Enter a first name.
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Last name*</label>
+                            <input type="text" class="form-control mb-3 fs-7" id="lstName" name="lstName"
+                                placeholder="Enter Last Name" formControlName="lstName">
+                            <div *ngIf="stfData.lstName && stfData.lstName.invalid && stfData.lstName.touched"
+                                class="text-danger">
+                                Please Enter a last name.
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Mobile Phone*</label>
+                            <input type="number" class="form-control mb-3 fs-7" id="phNum" name="phNum"
+                                placeholder="Enter Phone Number" formControlName="phNum">
+                            <div *ngIf="stfData.phNum && stfData.phNum.invalid && stfData.phNum.touched"
+                                class="text-danger">
+                                Please Enter a your Phone number.
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Email*</label>
+                            <input type="email" class="form-control mb-3 fs-7" id="email" name="email"
+                                placeholder="Enter Email" formControlName="email">
+                            <div *ngIf="stfData.email && stfData.email.invalid && stfData.email.touched"
+                                class="text-danger">
+                                Please Enter a valid email.
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Password*</label>
+                            <input type="password" class="form-control mb-3 fs-7" id="pass" name="pass"
+                                placeholder="Enter Password" formControlName="pass">
+                            <div *ngIf="stfData.pass && stfData.pass.invalid && stfData.pass.touched"
+                                class="text-danger">
+                                Password must be contain at-least 8 characters.
+                            </div>
+                        </div>
+
+                        <label for="exampleInputEmail1" class="form-label">Role*</label>
+                        <select class="form-select mb-3 fs-7" name="role" formControlName="role" id="role">
+                            <option value="" selected disabled>Select</option>
+                            <option value="Super Admin">Super Admin</option>
+                            <option value="Admin">Admin</option>
+                            <option value="Staff">Staff</option>
+                        </select>
+                        <div *ngIf="stfData.role && stfData.role.invalid && stfData.role.touched" class="text-danger">
+                            Please select one option.
+                        </div>
+
+                        <label for="exampleInputEmail1" class="form-label">Standard*</label>
+                        <ng-multiselect-dropdown formControlName="std" name="std" id="std"
+                            [placeholder]="'Select Standard'" [settings]="dropdownSettings" [data]="dropdownList"
+                            [(ngModel)]="selectedItems" (onSelect)="onItemSelect($event)"
+                            (onSelectAll)="onSelectAll($event)">
+                        </ng-multiselect-dropdown>
+                        <button type="submit" class="btn btn-outline-success float-end mt-4">Submit</button>
+                    </form>
+                </div>
+            </ng-template>
+
+            <!-- Edit model -->
+
+            <ng-template #content1 let-c="close" let-d="dismiss">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modal-basic-title">Update Data</h5>
+                    <button type="button" class="btn-close" aria-label="Close" (click)="d('Cross click')"></button>
+                </div>
+                <div class="modal-body">
+                    <form class="text-start fs-7" [formGroup]="editStaffData" (ngSubmit)="onSave()">
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">First name*</label>
+                            <input type="text" class="form-control mb-3 fs-7" id="fstName" name="fstName"
+                                placeholder="Enter First Name" formControlName="fstName">
+                            <div *ngIf="stfData.fstName && stfData.fstName.invalid && stfData.fstName.touched"
+                                class="text-danger">
+                                Please Enter a first name.
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Last name*</label>
+                            <input type="text" class="form-control mb-3 fs-7" id="lstName" name="lstName"
+                                placeholder="Enter Last Name" formControlName="lstName">
+                            <div *ngIf="stfData.lstName && stfData.lstName.invalid && stfData.lstName.touched"
+                                class="text-danger">
+                                Please Enter a last name.
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Mobile Phone*</label>
+                            <input type="number" class="form-control mb-3 fs-7" id="phNum" name="phNum"
+                                placeholder="Enter Phone Number" formControlName="phNum">
+                            <div *ngIf="stfData.phNum && stfData.phNum.invalid && stfData.phNum.touched"
+                                class="text-danger">
+                                Please Enter a your Phone number.
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Email*</label>
+                            <input type="email" class="form-control mb-3 fs-7" id="email" name="email"
+                                placeholder="Enter Email" formControlName="email">
+                            <div *ngIf="stfData.email && stfData.email.invalid && stfData.email.touched"
+                                class="text-danger">
+                                Please Enter a valid email.
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Password*</label>
+                            <input type="password" class="form-control mb-3 fs-7" id="pass" name="pass"
+                                placeholder="Enter Password" formControlName="pass">
+                            <div *ngIf="stfData.pass && stfData.pass.invalid && stfData.pass.touched"
+                                class="text-danger">
+                                Password must be contain at-least 8 characters.
+                            </div>
+                        </div>
+
+                        <label for="exampleInputEmail1" class="form-label">Role*</label>
+                        <select class="form-select mb-3 fs-7" name="role" formControlName="role" id="role">
+                            <option value="" selected disabled>Select</option>
+                            <option value="Super Admin">Super Admin</option>
+                            <option value="Admin">Admin</option>
+                            <option value="Staff">Staff</option>
+                        </select>
+                        <div *ngIf="stfData.role && stfData.role.invalid && stfData.role.touched" class="text-danger">
+                            Please select one option.
+                        </div>
+
+                        <label for="exampleInputEmail1" class="form-label">Standard*</label>
+                        <ng-multiselect-dropdown formControlName="std" name="std" id="std"
+                            [placeholder]="'Select Standard'" [settings]="dropdownSettings" [data]="dropdownList"
+                            [(ngModel)]="selectedItems" (onSelect)="onItemSelect($event)"
+                            (onSelectAll)="onSelectAll($event)">
+                        </ng-multiselect-dropdown>
+
+                        <button type="submit" class="btn btn-outline-success float-end mt-4">Save</button>
+                    </form>
+                </div>
+            </ng-template>
+
+            <!-- Delete model -->
+
+            <ng-template #content2 class="" let-c="close" let-d="dismiss">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modal-basic-title">Profile deletion</h5>
+                    <button type="button" class="btn-close" aria-label="Close" (click)="d('Cross click')"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <i class="bi bi-exclamation-octagon-fill text-danger display-3"></i>
+                    <p class="mt-2">
+                        <strong>Are you sure you want to delete profile?<br> If yes than please type "Delete".</strong>
+                    </p>
+                    <div class="mb-3">
+                        <input type="text" class="form-control mb-3 fs-7" id="delete" name="delete" placeholder="Delete"
+                            [(ngModel)]="confDelete" autocomplete="off">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary rounded-1"
+                        (click)="d('cancel click')">Cancel</button>
+                    <button type="button" class="btn btn-danger rounded-1" (click)="onOk()">Ok</button>
+                </div>
+
+            </ng-template>
+        </div>
+
+
+
+    </div>
+</main>

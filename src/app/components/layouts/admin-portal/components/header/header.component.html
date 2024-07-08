@@ -1,0 +1,103 @@
+<!-- aside -->
+<aside class="aside">
+    <div class="heading pt-3 pt-sm-4 px-2 px-sm-3">
+        <h5 class="border-bottom border-dark-subtle text-white pb-4 px-3 m-0">
+            FANTASTICSCHOOL
+        </h5>
+    </div>
+    <div class="list text-white p-3 p-sm-4">
+        <ul class="navbar-nav justify-content-center">
+            <li class="nav-item" routerLinkActive="active" routerLink="/admin/dashboard">
+                <a class="nav-link cursor d-flex align-items-center">
+                    <i class="bi bi-speedometer2 fs-4"></i>
+                    <span class="fs-7 fw-semibold ps-3">DASHBOARD</span>
+                </a>
+            </li>
+
+            <li class="nav-item" routerLinkActive="active" routerLink="/admin/staff">
+                <a class="nav-link cursor d-flex align-items-center">
+                    <i class="bi bi-people fs-4"></i>
+                    <span class="fs-7 fw-semibold ps-3">STAFF</span>
+                </a>
+            </li>
+
+            <li class="nav-item" routerLinkActive="active" routerLink="/admin/students">
+                <a class="nav-link cursor d-flex align-items-center">
+                    <i class="bi bi-person fs-4"></i>
+                    <span class="fs-7 fw-semibold ps-3">STUDENTS</span>
+                </a>
+            </li>
+            <li class="nav-item" routerLinkActive="active" routerLink="/admin/feescollection">
+                <a class="nav-link cursor d-flex align-items-center">
+                    <i class="bi bi-wallet fs-4"></i>
+                    <span class="fs-7 fw-semibold ps-3">FEESCOLLECTION</span>
+                </a>
+            </li>
+            <li class="nav-item" routerLinkActive="active" routerLink="/admin/hostels">
+                <a class="nav-link cursor d-flex align-items-center">
+                    <i class="bi bi-house-door fs-4"></i>
+                    <span class="fs-7 fw-semibold ps-3">HOSTELS</span>
+                </a>
+            </li>
+            <li class="nav-item" routerLinkActive="active" routerLink="/admin/classes">
+                <a class="nav-link cursor d-flex align-items-center">
+                    <i class="bi bi-journals fs-4"></i>
+                    <span class="fs-7 fw-semibold ps-3">CLASSES</span>
+                </a>
+            </li>
+            <li class="nav-item" routerLinkActive="active" routerLink="/admin/sessions">
+                <a class="nav-link cursor d-flex align-items-center">
+                    <i class="bi bi-key fs-4"></i>
+                    <span class="fs-7 fw-semibold ps-3">SESSIONS</span>
+                </a>
+            </li>
+            <li class="nav-item" routerLinkActive="active" routerLink="/admin/notices">
+                <a class="nav-link cursor d-flex align-items-center">
+                    <i class="bi bi-megaphone fs-4"></i>
+                    <span class="fs-7 fw-semibold ps-3">NOTICES</span>
+                </a>
+            </li>
+            <li class="nav-item" routerLinkActive="active" routerLink="/admin/feesstructure">
+                <a class="nav-link cursor d-flex align-items-center">
+                    <i class="bi bi-newspaper fs-4"></i>
+                    <span class="fs-7 fw-semibold ps-3">FEESSTRUCTURE</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</aside>
+
+<main>
+    <div class="container">
+        <div class="main-body-header row border-bottom border-dark-subtle">
+            <div ngbDropdown
+                class="d-flex justify-content-between align-items-center px-3 px-md-4 py-1 py-md-3 flex-column flex-md-row">
+                <h5 class="m-0 fw-bold cursor" routerLink="/admin/dashboard">
+                    Fantastic School Admin
+                </h5>
+                <a class="nav-link cursor d-flex align-items-center curser" ngbDropdownToggle id="dropdown">
+                    <i class="bi bi-person fs-4"></i>
+                    <span class="p-2 pe-1 fw-semibold">Profile</span>
+                    <!-- <i class="bi bi-caret-down-fill fs-7"></i> -->
+                </a>
+                <div ngbDropdownMenu aria-labelledby="dropdown" class="dropdown-card">
+                    <div ngbDropdownItem class="profile-img w-auto text-center">
+                        <img src="https://i.pravatar.cc/600" alt="" class="img-fluid rounded-circle w-50 h-50">
+                        <p class="fs-7 lh-sm m-0 fw-normal text-secondary">Richard Roi <br>
+                            Super admin
+                        </p>
+                    </div>
+
+                    <div class="dropdown-divider"></div>
+                    <button ngbDropdownItem class="fs-7 fw-semibold ps-4" routerLink="/admin/profile">My
+                        account</button>
+                    <button ngbDropdownItem class="fs-7 fw-semibold ps-4">Request tenant</button>
+                    <div class="dropdown-divider"></div>
+                    <button ngbDropdownItem class="fs-7 fw-semibold ps-4" routerLink="/">
+                        <i class="bi bi-power pe-1 text-danger"></i>Logout
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

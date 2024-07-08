@@ -1,0 +1,97 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'ngx-toastr/toastr';
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap';
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont,
+        'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
+        'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+    background-color: rgb(248, 248, 251);
+}
+
+main {
+    margin: 0px 0px 0px 248px;
+
+}
+
+.aside {
+    width: 248px;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    background-color: hsl(60deg 3.13% 12.55%);
+}
+
+@media screen and (max-width: 540px) {
+    .aside {
+        width: 216px;
+    }
+
+    main {
+        margin: 0px 0px 0px 216px;
+    }
+}
+
+.fs-7 {
+    font-size: 13px;
+}
+
+// .list a:hover {
+//     color: orangered;
+// }
+
+.active {
+    color: orangered;
+}
+
+.main-body-header h5 {
+    color: hsl(82.5deg 3.33% 47.06%);
+}
+
+.main-body-header a i {
+    color: hsl(82.5deg 3.33% 47.06%);
+}
+
+.main-body-contain h5 {
+    background-color: #09bc8a;
+}
+
+.orange {
+    color: orangered;
+}
+
+.bg-primary.bg-soft {
+    background-color: rgb(212 219 249) !important;
+}
+
+.text-purple {
+    color: #556EE6;
+}
+
+.bg-purple {
+    background-color: #556EE6;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+/* Importing Bootstrap SCSS file. */
+@import "./node_modules/bootstrap/scss/bootstrap";
+
+/* Importing Datepicker SCSS file. */
+@import "node_modules/ngx-bootstrap/datepicker/bs-datepicker";

@@ -1,0 +1,150 @@
+<div class="account-pages my-5 pt-sm-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6 col-xl-5">
+                <div class="card overflow-hidden rounded-1 border-0">
+                    <div class="bg-primary bg-soft">
+                        <div class="row">
+                            <div class="col-7">
+                                <div class="p-4 text-purple">
+                                    <h5 class="fs-6">Free Register</h5>
+                                    <p class="fs-7 fw-medium lh-sm">Get your free Skote account <br> now.</p>
+                                </div>
+                            </div>
+                            <div class="col-5 align-self-end">
+                                <img src="assets/imgs/profile-img.png" alt="" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body pt-0">
+                        <!-- <div class="auth-logo">
+                            <a href="index.html" class="auth-logo-light">
+                                <div class="avatar-md profile-user-wid mb-4">
+                                    <span class="avatar-title rounded-circle bg-light">
+                                        <img src="assets/imgs/logo.svg" alt="" class="rounded-circle" height="34">
+                                    </span>
+                                </div>
+                            </a>
+
+                            <a href="index.html" class="auth-logo-dark">
+                                <div class="avatar-md profile-user-wid mb-4">
+                                    <span class="avatar-title rounded-circle bg-light">
+                                        <img src="assets/imgs/logo.svg" alt="" class="rounded-circle" height="34">
+                                    </span>
+                                </div>
+                            </a>
+                        </div> -->
+                        <div class="p-2 pt-3">
+                            <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                                <div class="mb-3">
+                                    <label for="useremail" class="form-label fs-7 fw-medium">Email</label>
+
+                                    <input type="email" class="form-control fs-7" id="useremail"
+                                        placeholder="Enter email" name="email" formControlName="email">
+
+                                    <div *ngIf="regData.email && regData.email.invalid && regData.email.touched"
+                                        class="text-danger">
+                                        Please Enter a valid Email.
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="username" class="form-label fs-7 fw-medium">Username</label>
+                                    <input type="text" class="form-control fs-7" id="username"
+                                        placeholder="Enter username" name="username" formControlName="username">
+
+                                    <div *ngIf="regData.username && regData.username.invalid && regData.username.touched"
+                                        class="text-danger">
+                                        Please Enter Your Name.
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label class="form-label fs-7 fw-medium">Password</label>
+                                    <input type="password" class="form-control fs-7" placeholder="Enter password"
+                                        name="pass" formControlName="pass">
+                                    <!-- <button class="btn btn-light " type="button" id="password-addon">
+                                                <i class="bi bi-eye-fill"></i>
+                                            </button> -->
+
+                                    <div *ngIf="regData.pass && regData.pass.invalid && regData.pass.touched"
+                                        class="text-danger">
+                                        Please enter the password.
+                                    </div>
+                                    <div *ngIf="regData.pass && regData.pass.invalid && regData.pass.touched"
+                                        class="text-danger">
+                                        Password must be contain atleast 8 characters.
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="role" class="form-label fs-7 fw-medium">Role</label>
+                                    <select name="role" id="role" formControlName="role" class="form-control fs-7">
+                                        <option value="" disabled hidden selected>Select an option</option>
+                                        <option value="Admin">Admin</option>
+                                        <option value="teachers">Teacher</option>
+                                    </select>
+
+                                    <div *ngIf="regData.role && regData.role.invalid && regData.role.touched"
+                                        class="text-danger">
+                                        Please Select an option.
+                                    </div>
+                                </div>
+
+                                <div class="mt-4 d-grid">
+                                    <button class="btn button bg-purple text-white fs-7 rounded-1 fw-medium"
+                                        type="submit">Register</button>
+                                </div>
+
+                                <div class="mt-4 text-center">
+                                    <!-- <h5 class="fs-6 mb-3">Sign in with</h5> -->
+
+                                    <!-- <ul class="list-inline">
+                                        <li class="list-inline-item">
+                                            <a href="javascript::void()"
+                                                class="social-list-item bg-primary text-white border-primary">
+                                                <i class="mdi mdi-facebook"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a href="javascript::void()"
+                                                class="social-list-item bg-info text-white border-info">
+                                                <i class="mdi mdi-twitter"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a href="javascript::void()"
+                                                class="social-list-item bg-danger text-white border-danger">
+                                                <i class="mdi mdi-google"></i>
+                                            </a>
+                                        </li>
+                                    </ul> -->
+                                </div>
+
+                                <div class="mt-4 text-center">
+                                    <p class="mb-0 fs-7 fw-medium text-muted">By registering you agree to the Skote
+                                        <a href="javascript:void(0)" class="text-primary nav-link d-inline">Terms of
+                                            Use</a>
+                                    </p>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-5 text-center fw-medium">
+                    <div class="fs-7">
+                        <p class="">Already have an account ?
+                            <a href="" class="nav-link d-inline text-primary" routerLink="/">Login</a>
+                        </p>
+                        <p class="text-secondary">©
+                            <script>document.write(new Date().getFullYear())</script> Skote. Crafted with
+                            <i class="bi bi-heart-fill text-danger"></i> by Themesbrand
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
